@@ -81,26 +81,3 @@ start()
 
 
 
-
-
-
-// app.get('/', (req, res, next) => {
-//     res.status(200)
-//     // res.sendFile(path.join(__dirname, 'views', 'index.html'))
-//     res.render('index', { title: 'Main', isMain: true })
-// })
-
-// app.get('/courses', (req, res, next) => {
-//     res.status(200)
-//     // res.sendFile(path.join(__dirname, 'views', 'about.html'))
-//     res.render('courses', { title: 'Courses', isCourses: true })
-// })
-
-// app.get('/add', (req, res, next) => {
-//     res.status(200)
-//     // res.sendFile(path.join(__dirname, 'views', 'about.html'))
-//     res.render('add', { title: 'Add', isAdd: true })
-// })
-
-
-
