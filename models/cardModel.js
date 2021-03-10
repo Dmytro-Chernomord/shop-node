@@ -22,15 +22,6 @@ class Card {
             bag.quantity += 1
             bag.price += +product.price
         }
-
-
-        // if (productIdx > -1) {
-        //     console.log(bag.products[productIdx]);
-        //     bag.products[productIdx] = { ...bag.products[productIdx], "quantity": bag.products[productIdx].quantity + 1 }
-        //     bag.quantity += 1
-        // } else {
-        //     bag.products.push({ ...product, "quantity": +1 })
-        // }
         return new Promise((resolve, reject) => {
             fs.writeFile(bagPath, JSON.stringify(bag), (err) => {
                 if (err) {

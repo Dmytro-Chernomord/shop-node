@@ -12,7 +12,6 @@ router.get('/', auth, (req, res, next) => {
 })
 
 router.post('/', auth, courseValidator, async (req, res) => {
-    // const course = new Course(req.body.title, req.body.price, req.body.img);
     const error = validationResult(req)
 
     if (!error.isEmpty()) {

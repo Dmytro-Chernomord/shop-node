@@ -27,7 +27,6 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', async (req, res) => {
     const course = await Course.findById(req.params.id)
     res.render('course', { title: `Course: ${course.title}`, course, layout: 'empty' })
-    // res.render('index')
 })
 router.get('/:id/edit', async (req, res) => {
     if (!req.query.allow) {

@@ -67,7 +67,6 @@ router.post('/login', loginValidator, async (req, res) => {
     } catch (error) {
         console.log(error);
     }
-    // const user = await User.findById('6006f09570e0e5884388ea3f')
 }
 )
 router.post('/register', registerValidator, async (req, res) => {
@@ -120,7 +119,6 @@ router.post('/reset', (req, res) => {
                 return res.redirect('/auth/reset')
             }
         })
-        // res.redirect('/newPasswort')
     } catch (error) {
         console.log(error);
     }
@@ -159,5 +157,4 @@ router.post('/resetPassword', async (req, res) => {
     await user.save()
     res.redirect('/auth')
 })
-// console.log(registrationEmail('tschernnomord@gmail.com'));
 module.exports = router

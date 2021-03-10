@@ -45,9 +45,6 @@ userSchema.methods.addToBag = function (course) {
             quantity: 1
         })
     }
-    // const newBag = { items: cloneItems }
-    // this.bag = newBag
-
     this.bag = { items: cloneItems }
     return this.save()
 }

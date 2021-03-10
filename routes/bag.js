@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const Course = require('../models/course')
-// const Card = require('../models/cardModel')
+
 const router = Router()
 const auth = require('../middleware/auth')
 

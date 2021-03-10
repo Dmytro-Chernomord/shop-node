@@ -84,9 +84,6 @@ if (bag) {
         }
     }
     document.querySelector('#bag').addEventListener('click', removeButton);
-
-    // const button = document.querySelectorAll('.js-remove');
-    // button.forEach(el => el.addEventListener('click', remove))
 }
 M.Tabs.init(document.querySelectorAll('.tabs'))
 //alternative without button remmove logic
