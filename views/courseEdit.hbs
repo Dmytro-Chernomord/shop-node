@@ -1,0 +1,36 @@
+<h1>Course {{course.title}}</h1>
+<div class="row">
+    <form action='/courses/edit' method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+                <input name="title" id="course" type="text" required=true class="validate" value={{course.title}}>
+                <label for="course">Course</label>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input name="price" id="price" type="text" required=true class="validate" value={{course.price}}>
+                <label for="price">Price</label>
+                <span class="helper-text" data-error="* required"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input name="img" id="img" type="text" required=true class="validate" required='true'
+                    value={{course.img}} />
+                <label for="img">Image</label>
+            </div>
+        </div>
+        <input type="hidden" name='id' value={{course.id}}>
+        <input type="hidden" name="_csrf" value={{csrf}}>
+
+        <button type="submit" class="btn btn-primary">Edit course</button>
+    </form>
+    <form class="col s6" action="/courses/remove" method="POST">
+        <input type="hidden" name='id' value="{{course.id}}">
+        <input type="hidden" name="_csrf" value={{csrf}}>
+        <button type="submit" class="btn btn-primary red delete-button">Delete course</button>
+    </form>
+
+</div>

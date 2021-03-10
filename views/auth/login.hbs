@@ -1,0 +1,82 @@
+<div class="auth">
+    <div class="row">
+        <div class="col s12">
+            <ul class="tabs">
+                <li class="tab col s6"><a class="active" href="#login">Login</a></li>
+                <li class="tab col s6"><a class="active" href="#register">Registration</a></li>
+            </ul>
+        </div>
+        <div id="login" class="col s6 offset-s3">
+            <h1>Login</h1>
+            <div class="row">
+                {{#if loginError}}
+                <p class="error">{{loginError}}</p>
+                {{/if}}
+                <form action='/auth/login' method="POST" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input name="email" id="email" type="text" class="validate" required>
+                            <label for="email">Email</label>
+                            <span class="helper-text" data-error="* required"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input name="password" id="password" type="password" class="validate" required>
+                            <label for="password">Password</label>
+                            <span class="helper-text" data-error="* required"></span>
+                        </div>
+                    </div>
+                    <p> <a href="/auth/reset">forgot password?</a></p>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <input type="hidden" name="_csrf" value={{csrf}}>
+                </form>
+            </div>
+
+
+        </div>
+        <div id="register" class="col s6 offset-s3">
+
+            <h1>Registration</h1>
+            <div class="row">
+                {{#if registerError}}
+                <p class="error" style="color: white;  background-color:red ;     display: inline-block;
+    border-radius: 5px; padding:2px">{{registerError}}</p>
+                {{/if}}
+                <form action='/auth/register' method="POST" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input name="name" id="name" type="text" class="validate" required>
+                            <label for="name">Name</label>
+                            <span class="helper-text" data-error="* required"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input name="remail" id="remail" type="text" class="validate" required>
+                            <label for="remail">Email</label>
+                            <span class="helper-text" data-error="* required"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input name="rpassword" id="rpassword" type="password" class="validate" required>
+                            <label for="rpassword">Password</label>
+                            <span class="helper-text" data-error="* required"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input name="confirmpassword" id="confirmpassword" type="password" class="validate"
+                                required>
+                            <label for="confirmpassword">Confirm Password</label>
+                            <span class="helper-text" data-error="* required"></span>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_csrf" value={{csrf}}>
+
+                    <button type="submit" class="btn btn-primary">Registration </button>
+            </div>
+            </form>
+        </div>
+    </div>

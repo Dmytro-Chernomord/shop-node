@@ -1,0 +1,38 @@
+<h1 class="main-header">Courses</h1>
+{{#if courses.length}}
+<ul>
+    {{#each courses}}
+    <li>
+        <div class="row">
+            <div class="col s6 offset-s3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src={{img}}>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title">{{title}}</span>
+                        <p class="price">{{price}}</p>
+                    </div>
+                    <div class="card-action buy">
+                        <a href="/courses/{{id}}" target="_blanc">Open course</a>
+                        {{#if @root.isAuth}}
+
+                        {{#ifeq userId.id @root.userId}}
+                        <a href="/courses/{{id}}/edit?allow=true">Edit course</a>
+                        {{/ifeq}}
+                        <form action='/bag/add' method="POST">
+                            <input type="hidden" name="id" value="{{id}}">
+                            <input type="hidden" name="_csrf" value={{@root.csrf}}>
+                            <button type="submit" class='btn btn-primary'>Buy</button>
+                        </form>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
+{{else}}
+<h2>All teachers have vacation 😂</h2>
+{{/if}}
