@@ -58,9 +58,10 @@ if (bag) {
         }
     }
     async function removeButton(e) {
-        if (e.target.classList.contains('js-remove')) {
+        if (e.target.classList.contains('js-remove')) { 
             const newBag = await fetch('/bag/remove/' + e.target.dataset.id, {
-                method: 'delete'
+                method: 'delete',
+                headers: { 'X-XSRF-TOKEn': e.target.dataset.csrf }
             }).then(res => res.json()).then(data => {
                 return data
             })
